@@ -43,7 +43,7 @@ def bind(args, source, destination, create_folders=True, umount=False):
                                path)
 
     # Actually mount the folder
-    tools.helpers.run.user(args, ["mount", "-o", "bind", source, destination])
+    tools.helpers.run.user(args, ["mount", "-o", "rbind", source, destination])
 
     # Verify, that it has worked
     if not ismount(destination):
