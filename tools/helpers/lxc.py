@@ -79,7 +79,7 @@ def generate_nodes_lxc_config(args):
 
     # Mount /data
     make_entry("tmpfs", "mnt", "tmpfs", "mode=0755,uid=0,gid=1000", False)
-    make_entry(tools.config.defaults["data"], "data", options="bind 0 0", check=False)
+    make_entry(tools.config.defaults["data"], "data", options="rbind 0 0", check=False)
 
     # Mount host permissions
     make_entry(tools.config.defaults["host_perms"],
